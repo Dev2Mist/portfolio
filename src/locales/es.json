@@ -1,0 +1,52 @@
+{
+  "nav": {
+    "about": "Acerca de",
+    "skills": "Habilidades",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "Estudiante de Ciencias de la Computación",
+    "description": "Estudiante apasionado de Ciencias de la Computación con experiencia práctica en programación de sistemas, desarrollo web y arquitectura de redes. Hábil en múltiples lenguajes de programación con una sólida base en estructuras de datos, algoritmos y principios de diseño de software.",
+    "getInTouch": "Contáctame",
+    "viewProjects": "Ver Proyectos"
+  },
+  "skills": {
+    "title": "Habilidades Técnicas",
+    "categories": {
+      "systems": "Sistemas",
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "database": "Base de Datos",
+      "enterprise": "Empresarial"
+    }
+  },
+  "projects": {
+    "title": "Proyectos Universitarios",
+    "viewDetails": "Ver Detalles",
+    "viewCode": "Ver Código",
+    "items": {
+      "bankSimulator": {
+        "title": "Simulador de Servicios Bancarios",
+        "description": "Simulación integral de sistema bancario construida en C puro, implementando estructuras de datos fundamentales como pilas, colas y listas enlazadas. Incluye gestión de cuentas, procesamiento de transacciones y demuestra manejo avanzado de memoria."
+      },
+      "videogameShop": {
+        "title": "Tienda de Videojuegos",
+        "description": "Programa complejo en C que simula una tienda de juegos con manejo avanzado de memoria, algoritmos sofisticados y funciones callback. Demuestra comprensión profunda de programación en C y organización de proyectos."
+      },
+      "emailSystem": {
+        "title": "Sistema Cliente-Servidor de Email",
+        "description": "Aplicación distribuida usando Python y Java con programación de sockets. El servidor procesa solicitudes de nombre de usuario/longitud y genera direcciones de correo correspondientes, mostrando habilidades de programación de redes."
+      },
+      "coffeeShop": {
+        "title": "Página de Cafetería",
+        "description": "Página web responsiva para una cafetería construida con JavaScript, HTML y CSS vanilla. Diseño limpio enfocado en la experiencia del usuario y prácticas modernas de desarrollo web."
+      }
+    }
+  },
+  "contact": {
+    "title": "Conectemos",
+    "description": "Siempre estoy ansioso por aprender, colaborar en proyectos interesantes y conectar con otros desarrolladores y profesionales de la industria.",
+    "footer": "Construido con React y Tailwind CSS."
+  }
+}

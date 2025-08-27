@@ -1,0 +1,52 @@
+{
+  "nav": {
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Computer Science Student",
+    "description": "Passionate Computer Science student with hands-on experience in systems programming, web development, and network architecture. Skilled in multiple programming languages with a strong foundation in data structures, algorithms, and software design principles.",
+    "getInTouch": "Get In Touch",
+    "viewProjects": "View Projects"
+  },
+  "skills": {
+    "title": "Technical Skills",
+    "categories": {
+      "systems": "Systems",
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "database": "Database",
+      "enterprise": "Enterprise"
+    }
+  },
+  "projects": {
+    "title": "College Projects",
+    "viewDetails": "View Details",
+    "viewCode": "View Code",
+    "items": {
+      "bankSimulator": {
+        "title": "Bank Utilities Simulator",
+        "description": "Comprehensive banking system simulation built in pure C, implementing core data structures like stacks, queues, and linked lists. Features account management, transaction processing, and demonstrates advanced memory management."
+      },
+      "videogameShop": {
+        "title": "Videogame Vending Shop",
+        "description": "Complex C program simulating a game store with advanced memory management, sophisticated algorithms, and callback functions. Demonstrates deep understanding of C programming and project organization."
+      },
+      "emailSystem": {
+        "title": "Client-Server Email System",
+        "description": "Distributed application using Python and Java with socket programming. Server processes username/length requests and generates corresponding email addresses, showcasing network programming skills."
+      },
+      "coffeeShop": {
+        "title": "Coffee Shop Landing Page",
+        "description": "Responsive web landing page for a coffee shop built with vanilla JavaScript, HTML, and CSS. Clean design focusing on user experience and modern web development practices."
+      }
+    }
+  },
+  "contact": {
+    "title": "Let's Connect",
+    "description": "I'm always eager to learn, collaborate on interesting projects, and connect with fellow developers and industry professionals.",
+    "footer": "Built with React and Tailwind CSS."
+  }
+}
