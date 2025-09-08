@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, ExternalLink, Code, Database, Server, Globe, Moon, Sun } from 'lucide-react';
+import { Github, Linkedin, ExternalLink, Code, Database, Server, Globe, Moon, Sun, Calendar, MapPin } from 'lucide-react';
 import { useLanguage } from './context/LanguageContext';
 import { useTheme } from './context/ThemeContext';
 
@@ -15,7 +15,9 @@ function App() {
     { name: 'React', category: 'Frontend' },
     { name: 'HTML/CSS', category: 'Frontend' },
     { name: 'SQL', category: 'Database' },
-    { name: 'SAP', category: 'Enterprise' }
+    { name: 'SAP BTP', category: 'Enterprise' },
+    { name: 'SAP Fiori', category: 'Enterprise' },
+    { name: 'SAP JavaScript', category: 'Enterprise' }
   ];
 
   const projects = [
@@ -50,7 +52,18 @@ function App() {
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
+    <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300 relative overflow-hidden">
+      {/* Floating Background Elements */}
+      <div className="fixed inset-0 pointer-events-none">
+        <div className="absolute top-20 left-10 w-20 h-20 bg-blue-100 dark:bg-blue-900/20 rounded-full animate-float opacity-60"></div>
+        <div className="absolute top-40 right-20 w-16 h-16 bg-purple-100 dark:bg-purple-900/20 rounded-full animate-float-delayed opacity-50"></div>
+        <div className="absolute top-60 left-1/4 w-12 h-12 bg-green-100 dark:bg-green-900/20 rounded-full animate-float-slow opacity-40"></div>
+        <div className="absolute bottom-40 right-10 w-24 h-24 bg-yellow-100 dark:bg-yellow-900/20 rounded-full animate-float opacity-30"></div>
+        <div className="absolute bottom-20 left-20 w-18 h-18 bg-pink-100 dark:bg-pink-900/20 rounded-full animate-float-delayed opacity-50"></div>
+        <div className="absolute top-1/3 right-1/3 w-14 h-14 bg-indigo-100 dark:bg-indigo-900/20 rounded-full animate-float-slow opacity-45"></div>
+        <div className="absolute bottom-1/3 left-1/2 w-10 h-10 bg-red-100 dark:bg-red-900/20 rounded-full animate-float opacity-35"></div>
+      </div>
+
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border-b border-gray-100 dark:border-gray-800 z-50 transition-colors duration-300">
         <div className="max-w-6xl mx-auto px-6 py-4">
@@ -123,12 +136,12 @@ function App() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
+      <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300 relative">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-4xl font-bold text-center text-gray-900 dark:text-white mb-16">{t('skills.title')}</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {['systems', 'backend', 'frontend', 'database'].map((category) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+            {['systems', 'backend', 'frontend', 'database', 'enterprise'].map((category) => (
               <div key={category} className="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-sm hover:shadow-md dark:shadow-gray-900/20 transition-all duration-300">
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">{t(`skills.categories.${category}`)}</h3>
                 <div className="space-y-3">
@@ -146,54 +159,82 @@ function App() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
+      <section id="projects" className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300 relative">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-4xl font-bold text-center text-gray-900 dark:text-white mb-16">{t('projects.title')}</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Timeline Container */}
+          <div className="relative">
+            {/* Timeline Line */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-500 to-purple-500 rounded-full"></div>
+            
+            {/* Timeline Items */}
+            <div className="space-y-16">
             {projects.map((project, index) => (
-              <div key={index} className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:shadow-lg dark:hover:shadow-gray-900/20 transition-all duration-300 hover:-translate-y-1 flex flex-col h-full">
-                <div className="flex items-center space-x-3 mb-4">
-                  <div className="text-blue-600 dark:text-blue-400">
-                    {project.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{project.title}</h3>
+              <div key={index} className={`relative flex items-center ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
+                {/* Timeline Node */}
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-blue-500 rounded-full border-4 border-white dark:border-gray-900 z-10 shadow-lg">
+                  <div className="absolute inset-1 bg-white dark:bg-gray-900 rounded-full"></div>
                 </div>
                 
-                <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed flex-grow">
-                  {project.description}
-                </p>
-                
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech) => (
-                    <span key={tech} className="bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full text-sm font-medium">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                
-                <div className="flex justify-between items-center mt-auto">
-                  <div className="flex items-center space-x-4">
-                    {project.githubUrl ? (
-                      <a 
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium flex items-center space-x-1 transition-colors"
-                      >
-                        <Github className="w-4 h-4" />
-                        <span>{t('projects.viewCode')}</span>
-                      </a>
-                    ) : (
-                      <span className="text-gray-400 dark:text-gray-500 font-medium flex items-center space-x-1">
-                        <Github className="w-4 h-4" />
-                        <span>{t('projects.viewCode')}</span>
-                      </span>
-                    )}
+                {/* Project Card */}
+                <div className={`w-full max-w-md ${index % 2 === 0 ? 'mr-auto pr-8' : 'ml-auto pl-8'}`}>
+                  <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:shadow-xl dark:hover:shadow-gray-900/30 transition-all duration-300 hover:-translate-y-2 relative">
+                    {/* Timeline Arrow */}
+                    <div className={`absolute top-6 ${index % 2 === 0 ? 'right-0 translate-x-full' : 'left-0 -translate-x-full'} w-0 h-0 border-t-8 border-b-8 border-transparent ${index % 2 === 0 ? 'border-l-8 border-l-gray-200 dark:border-l-gray-700' : 'border-r-8 border-r-gray-200 dark:border-r-gray-700'}`}></div>
+                    
+                    {/* Project Year Badge */}
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center space-x-2">
+                        <Calendar className="w-4 h-4 text-gray-500 dark:text-gray-400" />
+                        <span className="text-sm text-gray-500 dark:text-gray-400 font-medium">
+                          {2023 + index} {/* Adjust years as needed */}
+                        </span>
+                      </div>
+                      <div className="text-blue-600 dark:text-blue-400">
+                        {project.icon}
+                      </div>
+                    </div>
+                    
+                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">{project.title}</h3>
+                    
+                    <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                      {project.description}
+                    </p>
+                    
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.technologies.map((tech) => (
+                        <span key={tech} className="bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full text-sm font-medium">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    
+                    <div className="flex justify-between items-center">
+                      <div className="flex items-center space-x-4">
+                        {project.githubUrl ? (
+                          <a 
+                            href={project.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium flex items-center space-x-1 transition-colors"
+                          >
+                            <Github className="w-4 h-4" />
+                            <span>{t('projects.viewCode')}</span>
+                          </a>
+                        ) : (
+                          <span className="text-gray-400 dark:text-gray-500 font-medium flex items-center space-x-1">
+                            <Github className="w-4 h-4" />
+                            <span>{t('projects.viewCode')}</span>
+                          </span>
+                        )}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             ))}
+            </div>
           </div>
         </div>
       </section>
