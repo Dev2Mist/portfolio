@@ -178,7 +178,7 @@ function App() {
                 </div>
                 
                 {/* Project Card */}
-                <div className={`w-full max-w-md ${index % 2 === 1 ? 'mr-auto pr-8' : 'ml-auto pl-8'}`}>
+                <div className={`w-full max-w-md ${index % 2 === 0 ? 'mr-auto pr-8' : 'ml-auto pl-8'}`}>
                   <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:shadow-xl dark:hover:shadow-gray-900/30 transition-all duration-300 hover:-translate-y-2 relative">
                     {/* Timeline Arrow */}
                     <div className={`absolute top-6 ${index % 2 === 0 ? 'right-0 translate-x-full' : 'left-0 -translate-x-full'} w-0 h-0 border-t-8 border-b-8 border-transparent ${index % 2 === 0 ? 'border-l-8 border-l-gray-200 dark:border-l-gray-700' : 'border-r-8 border-r-gray-200 dark:border-r-gray-700'}`}></div>
