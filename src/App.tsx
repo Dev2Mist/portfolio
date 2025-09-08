@@ -188,7 +188,7 @@ function App() {
                       <div className="flex items-center space-x-2">
                         <Calendar className="w-4 h-4 text-gray-600 dark:text-gray-300" />
                         <span className="text-sm text-gray-600 dark:text-gray-300 font-medium">
-                          {index === 3 ? 2023 : 2023 + index} {/* Coffee shop project is 2023 */}
+                          {index === 3 ? 2025 : 2023 + index} {/* Coffee shop project is 2023 */}
                         </span>
                       </div>
                       <div className="text-blue-600 dark:text-blue-400">
