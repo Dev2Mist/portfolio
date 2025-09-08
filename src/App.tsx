@@ -46,7 +46,7 @@ function App() {
       title: t('projects.items.coffeeShop.title'),
       description: t('projects.items.coffeeShop.description'),
       technologies: ['JavaScript', 'HTML', 'CSS'],
-      icon: <Database className="w-5 h-6" />,
+      icon: <Database className="w-6 h-6" />,
       githubUrl: 'https://github.com/Dev2Mist/Landing-Page-de-Cafeteria/tree/main' 
     }
   ];
